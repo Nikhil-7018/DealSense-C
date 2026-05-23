@@ -1,0 +1,6 @@
+USE dealsense;
+
+ALTER TABLE wishlist
+  ADD COLUMN alert_enabled TINYINT(1) NOT NULL DEFAULT 0 AFTER product_id,
+  ADD COLUMN alert_target_price DECIMAL(12, 2) NULL AFTER alert_enabled,
+  ADD COLUMN updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP AFTER created_at;

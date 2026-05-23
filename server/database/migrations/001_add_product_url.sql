@@ -1,0 +1,2 @@
+ALTER TABLE products
+ADD COLUMN url VARCHAR(1000) NULL AFTER category;
