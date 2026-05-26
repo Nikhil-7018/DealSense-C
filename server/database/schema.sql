@@ -1,6 +1,6 @@
 -- DealSense AI – database schema (MySQL 8+)
-CREATE DATABASE IF NOT EXISTS dealsense CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
-USE dealsense;
+CREATE DATABASE IF NOT EXISTS Nikhildealsense CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+USE Nikhildealsense;
 
 CREATE TABLE users (
   id INT AUTO_INCREMENT PRIMARY KEY,

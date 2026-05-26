@@ -1,4 +1,4 @@
-USE dealsense;
+USE Nikhildealsense;
 
 -- Demo user: demo@dealsense.ai / password123
 INSERT INTO users (email, password_hash, name) VALUES
