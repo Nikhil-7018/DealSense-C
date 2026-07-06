@@ -170,17 +170,18 @@ export function ProductDetail() {
     setError(null);
     setAlertLoading(true);
     try {
-      const targetPrice = enabled ? Number(targetPriceInput) : null;
-      if (enabled && (!Number.isFinite(targetPrice) || targetPrice <= 0)) {
-        setAlertMessage('Enter a valid target price to enable alerts.');
-        return;
-      }
+    const targetPrice = Number(targetPriceInput);
 
-      const res = await api.patch('/api/wishlist/alert', {
-        productId,
-        enabled,
-        targetPrice,
-      });
+if (enabled && (!Number.isFinite(targetPrice) || targetPrice <= 0)) {
+  setAlertMessage("Enter a valid target price to enable alerts.");
+  return;
+}
+
+const res = await api.patch("/api/wishlist/alert", {
+  productId,
+  enabled,
+  targetPrice: enabled ? targetPrice : null,
+});
       setAlertStatus({
         alertEnabled: res.data.alertEnabled,
         alertTargetPrice: res.data.alertTargetPrice,
